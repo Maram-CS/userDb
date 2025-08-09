@@ -1,0 +1,19 @@
+{
+  "name": "userdb",
+  "version": "1.0.0",
+  "main": "User.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "mongoose": "^8.17.1"
+  },
+  "devDependencies": {
+    "nodeman": "^1.1.2"
+  }
+}
