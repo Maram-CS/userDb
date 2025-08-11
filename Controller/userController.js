@@ -83,7 +83,24 @@ const deleteUser = async (req,res,next) => {
     }
 }
 
-export {addUser,getAll,getAuser,updateUser,deleteUser};
+const loginUser = async (req,res, next) => {
+    
+    try {
+        const {email,password} = req.body;
+        const user = await modelUser.login(email,password);
+        if(user) {
+            const message = `${user.username} is logged in`;
+            res.status(200).json({user, message});
+            next();
+        }
+    
+        res.status(404).json({message: "Not found"})
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export {addUser,getAll,getAuser,updateUser,deleteUser, loginUser};
 
 
 
